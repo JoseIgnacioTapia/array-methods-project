@@ -88,3 +88,4 @@ sortBtn.addEventListener('click', sortByRichest);
 showMillionairesBtn.addEventListener('click', showMillionaries);
 calculateWealthBtn.addEventListener('click', calculateWealth);
 
+// Test
