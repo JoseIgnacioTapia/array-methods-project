@@ -5,7 +5,7 @@ const showMillionairesBtn = document.getElementById('show-millionaires');
 const sortBtn = document.getElementById('sort');
 const calculateWealthBtn = document.getElementById('calculate-wealth');
 
-const data = [];
+let data = [];
 
 // Fetch random user and add money
 async function getRandomUser() {
@@ -22,9 +22,14 @@ async function getRandomUser() {
   addData(newUser);
 }
 
-getRandomUser();
-getRandomUser();
-getRandomUser();
+// Double new obj to data arr
+function doubleMoney() {
+  data = data.map(user => {
+    return {...user, money: user.money * 2};
+  });
+
+  updateDOM();
+}
 
 // Add new obj to data arr
 function addData(obj) {
@@ -55,3 +60,4 @@ function formatMoney(number) {
 
 // Event Listeners
 addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
